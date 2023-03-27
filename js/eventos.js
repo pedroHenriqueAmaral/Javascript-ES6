@@ -1,7 +1,8 @@
 const img = document.querySelector('img');
+const imgs = document.querySelectorAll('img');
 const lista = document.querySelector('.lista');
 
-// console.log(img);
+const linkExterno = document.querySelector('a[href^="http"]');
 
 function callback(event) {
     console.log(event);
@@ -17,8 +18,13 @@ function targetLista(event) {
     // retorna o item da lista que foi clickado
     console.log(event.target); 
 }
-
 lista.addEventListener('click', targetLista);
 
 // https://developer.mozilla.org/en-US/docs/Web/Events
 
+function handleImg(event) {
+    console.log(event.target);
+}
+imgs.forEach((img) => {
+    img.addEventListener('click', handleImg);
+});
