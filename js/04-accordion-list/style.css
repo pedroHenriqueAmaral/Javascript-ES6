@@ -1,0 +1,29 @@
+.js .faq dd {
+    display: none;
+}
+
+.faq dt.ativo {
+    display: block;
+    animation: slideDown .5s forwards;
+}
+
+.faq dt::after {
+    content: '▼';
+    margin-left: 10px;
+}
+
+.faq dt.ativo::after {
+    content: '▲';
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        max-height: 0;
+    }
+    to {
+        opacity: 1;
+        max-height: 200px; /* Maior q o conteúdo */
+    }
+}
+
